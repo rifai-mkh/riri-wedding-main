@@ -390,7 +390,9 @@
             </li>
             <li class="list-group-item">
               <div class="fw-bold">MANDIRI</div>
-              987654321 - RIKKA ENGELINA
+              <textarea id="textToCopy" readonly>987654321 - RIKKA ENGELINA</textarea>
+                  <button onclick="copyToClipboard()">Copy to Clipboard</button>
+                  <div class="feedback" id="feedback">Copied to clipboard!</div>
             </li>
             <!-- <li class="list-group-item">
               <div class="fw-bold">Saweria</div>
@@ -400,8 +402,8 @@
               <div class="fw-bold">Kado Fisik</div>
                 <!-- <div class="copy-container"> -->
                   <textarea id="textToCopy" readonly>Jalan Raya Temanggung, Kabupaten Parakan, Temanggung, Jawa Tengah</textarea>
-                  <button onclick="copyToClipboard()">Copy to Clipboard</button>
-                  <div class="feedback" id="feedback">Copied to clipboard!</div>
+                  <button onclick="copyToClipboard()">Copy</button>
+                  <div class="feedback" id="feedback">Copied!</div>
                 <!-- </div> -->
             </li>
           </ul>
