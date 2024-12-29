@@ -34,22 +34,35 @@
       <h1>Fasoh</h1>
       <p>Akan melangsungkan pernikahan dalam:</p>
       <div class="simply-countdown"></div>
-      <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">Lihat Undangan</a>
-      <!-- <a href="#home" class="fa fa-envelope-o" onClick="enableScroll()">Lihat Undangan</a> -->
+      <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">
+        <!-- <ion-icon size="small" name="mail-outline"></ion-icon> Lihat Undangan</a> -->
+        <ion-col style="display: block">
+            <ion-icon size="large" name="mail-outline"></ion-icon>
+        </ion-col>
+        <ion-col>
+          Lihat Undangan
+        </ion-col>
+      </a>        
     </main>
 
   </section>
 
   <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
     <div class="container">
-      <a class="navbar-brand" href="#">RR</a>
+      <a class="navbar-brand" href="#">
+        <img src="rr-icon3.png" width="70" 
+        height="70" class="img-responsive rounded-circle">
+      </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
         aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">RR</h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <img src="rr-icon3.png" width="70" 
+        height="70" class="img-responsive rounded-circle">
+          </h5>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
@@ -367,6 +380,7 @@
         </div>
       </div>
 
+      
       <div class="row justify-content-center text-center">
         <div class="col-md-6">
           <ul class="list-group">
@@ -383,8 +397,12 @@
               <img src="img/saweria.png" alt="Saweria QR" class="img-thumbnail" width="150">
             </li> -->
             <li class="list-group-item">
-              <div class="fw-bold">Alamat Kirim Kado</div>
-              Jl Raya xxxxxxx, Temanggung, Jawa Tengah
+              <div class="fw-bold">Kado Fisik</div>
+                <!-- <div class="copy-container"> -->
+                  <textarea id="textToCopy" readonly>Jalan Raya Temanggung, Kabupaten Parakan, Temanggung, Jawa Tengah</textarea>
+                  <button onclick="copyToClipboard()">Copy to Clipboard</button>
+                  <div class="feedback" id="feedback">Copied to clipboard!</div>
+                <!-- </div> -->
             </li>
           </ul>
         </div>
@@ -420,6 +438,28 @@
       <i class="bi bi-disc"></i>
     </div>
   </div>
+
+
+  <script>
+    function copyToClipboard() {
+      const textToCopy = document.getElementById('textToCopy');
+      const feedback = document.getElementById('feedback');
+
+      navigator.clipboard.writeText(textToCopy.value)
+        .then(() => {
+          feedback.style.display = 'block'; // Show feedback
+          setTimeout(() => {
+            feedback.style.display = 'none'; // Hide feedback after 2 seconds
+          }, 2000);
+        })
+        .catch(err => {
+          console.error('Error copying text: ', err);
+        });
+    }
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
